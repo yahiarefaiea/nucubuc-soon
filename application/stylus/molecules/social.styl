@@ -1,0 +1,24 @@
+.social
+  width: (social-height*3)+(social-gap*2)
+  margin: 0 auto
+  li
+    margin-{align}: social-gap
+    &:first-child
+      margin-{align}: 0
+    a
+      display: block
+      width: social-height
+      height: social-height
+      padding: ((social-height - social-svg-height)/2)
+      border-radius: 50%
+      background-color: social-bg
+      svg
+        display: block
+        width: social-svg-height
+        height: social-svg-height
+        fill: social-color
+        transition: transition
+      &:hover
+        background-color: social-hover-bg
+        svg
+          fill: social-hover-color

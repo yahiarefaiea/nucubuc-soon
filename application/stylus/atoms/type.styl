@@ -2,11 +2,13 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6
   margin: 0
+  font-weight: weight-bold
   line-height: baseline+(baseline/3)
   color: text-dark
 
 h1, .h1
   font-size: font-h1
+  font-weight: weight-black
   line-height: baseline*2+(baseline/3)
   color: letters
 h2, .h2
@@ -58,7 +60,7 @@ a
       width: 100%
       height: anchor-underline-height
       transition: transition
-      transform: translateY(translate)
+      transform: translateY(translate/2)
     &:hover,
     &:focus
       color: letters
