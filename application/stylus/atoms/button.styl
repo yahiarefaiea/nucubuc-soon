@@ -1,51 +1,29 @@
-//  DEFAULT
 .button, button
   cursor: pointer
   overflow: hidden
-  display: block
+  display: inline-block
   position: relative
   width: auto
-  margin: 0
-  margin-bottom: button-margin
   padding: button-padding
-  border: none
+  border: button-border
   border-radius: button-radius
-  transition: all button-duration easing
   
   font-family: button-family
   font-size: button-font
   font-weight: button-weight
-  line-height: button-line-height
+  line-height: button-height
   
   white-space: nowrap
   vertical-align: middle
   text-align: center
   letter-spacing: normal
-  text-transform: uppercase
   text-decoration: none
   
+  transition: transition
   background-color: button-bg
   color: button-color
   
-  &:last-child
-    margin-bottom: 0
-  
+  &:hover,
   &:focus
-    outline: 0
-  
-  &:hover
     background-color: button-hover-bg
     color: button-hover-color
-  
-  &.big
-    display: block
-    width: 100%
-    border-radius: baseline
-    font-size: font-h5
-    line-height: baseline*2
-
-
-@media (min-width: 400px)
-  .button, button
-    display: inline-block
-    margin-bottom: 0

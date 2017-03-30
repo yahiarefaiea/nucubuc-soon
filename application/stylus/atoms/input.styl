@@ -6,18 +6,17 @@ input
   width: 100%
   height: auto
   margin: 0
-  margin-bottom: input-margin
   padding: input-padding
-  border: none
-  border-bottom: input-border
+  border: input-border
   border-radius: input-radius
-  transition all input-duration easing
   
-  font-family: family-body
+  font-family: input-family
   font-size: input-font
-  line-height: input-line-height
+  font-weight: input-weight
+  line-height: input-height
   vertical-align: middle
   
+  transition: transition
   background-color: input-bg
   color: input-color
   
@@ -25,13 +24,6 @@ input
     color: input-placeholder
     opacity: 1 !important
   
-  &:last-child
-    margin-bottom: 0
-  
-  &:focus
-    border: none
-    border-bottom: input-border
-
-//  YELLOW BACKGROUND CHROME
-input:-webkit-autofill
-  -webkit-box-shadow: inset 0 0 0 1000px background
+  //  YELLOW BACKGROUND CHROME
+  &:-webkit-autofill
+    -webkit-box-shadow: inset 0 0 0 1000px background

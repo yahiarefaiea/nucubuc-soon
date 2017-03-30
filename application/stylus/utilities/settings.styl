@@ -1,3 +1,5 @@
+baseline= 21px
+translate= baseline
 //  BASELINE GUIDE
 //   7 :  (baseline/3)
 //  14 :  (baseline/3*2)
@@ -25,25 +27,72 @@ nuc1= rgba(248, 0, 255, .5)
 nuc2= rgba(241, 90, 34, .5)
 nuc3= rgba(0, 174, 239, .5)
 nuc4= rgba(234, 234, 0, .5)
-letters= #464646
 
-background= #fff
+background= white
 border-default= #eee
 border-dark= #ddd
 
-text-dark-alt= letters
+letters= #464646
 text-dark= #545454
 text-default= #727272
 text-light= #929292
 
+selection-bg= magenta
+selection-color= white
 
-//  ROOT
-baseline= 21px
-translate= baseline/3*2
+
+//  TRANSITION
 easing= ease
 duration= .2s
 easing-luxury= cubic-bezier(0.190,1.000,0.220,1.000)
 duration-luxury= duration*2
+transition= all duration easing
 
-selection-bg= magenta
-selection-color= white
+
+//  OUTLINE
+outline-width= 1px
+outline-style= dashed
+outline-color= letters
+outline= outline-width outline-style outline-color
+
+
+//  ANCHOR
+anchor-underline-height= 10px
+anchor-underline-bg= yellow
+
+
+//  LIST
+list-counter= baseline
+ul-style= disc
+ol-style= decimal
+
+
+//  BUTTON
+button-height= baseline+(baseline/3*2)
+button-padding= 0 baseline
+button-border= none
+button-radius= button-height/2
+
+button-family= family-body
+button-font= font-default
+button-weight= weight-bold
+
+button-bg= magenta
+button-color= white
+button-hover-bg= yellow
+button-hover-color= letters
+
+
+//  INPUT
+input-height= baseline+(baseline/3*2)
+input-padding= 0 (baseline/3)
+input-border= none
+input-radius= 0
+
+input-family= family-body
+input-font= font-default
+input-weight= weight-bold
+
+input-bg= transparent
+input-color= text-default
+input-placeholder= text-light
