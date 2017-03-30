@@ -1,0 +1,37 @@
+form
+  margin: 0
+
+input
+  display: block
+  width: 100%
+  height: auto
+  margin: 0
+  margin-bottom: input-margin
+  padding: input-padding
+  border: none
+  border-bottom: input-border
+  border-radius: input-radius
+  transition all input-duration easing
+  
+  font-family: family-body
+  font-size: input-font
+  line-height: input-line-height
+  vertical-align: middle
+  
+  background-color: input-bg
+  color: input-color
+  
+  +placeholder()
+    color: input-placeholder
+    opacity: 1 !important
+  
+  &:last-child
+    margin-bottom: 0
+  
+  &:focus
+    border: none
+    border-bottom: input-border
+
+//  YELLOW BACKGROUND CHROME
+input:-webkit-autofill
+  -webkit-box-shadow: inset 0 0 0 1000px background

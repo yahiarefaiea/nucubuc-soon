@@ -1,0 +1,79 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  line-height: baseline+(baseline/3)
+  //  color: heading-color
+
+h1, .h1
+  font-size: font-h1
+  line-height: baseline*2+(baseline/3)
+h2, .h2
+  font-size: font-h2
+h3, .h3
+  font-size: font-h3
+h4, .h4
+  font-size: font-h4
+h5, .h5
+  font-size: font-h5
+h6, .h6
+  font-size: font-h6
+
+
+p, .p
+  margin: (baseline/3)
+  &:last-child
+    margin: 0
+
+
+small, .small
+  font-size: font-small
+  //  color: small-color
+
+
+a
+  cursor: pointer
+  text-decoration: none
+  transition: all duration easing
+  //  color: anchor-color
+  &:hover
+    text-decoration: none
+    //    color: anchor-color-hover
+small a
+  @extend .small
+
+//  UNDERLINE
+//a.underline
+//  display: inline-block
+//  position: relative
+//  color: text-light
+//  &:before
+//    content: ''
+//    z-index: -1
+//    display: block
+//    position: absolute
+//    bottom: 0
+//    {align}: 0
+//    width: 100%
+//    height: anchor-underline-height
+//    transition: all duration easing
+//    transform: translateY(translate/2)
+//  
+//  &:hover
+//    color: text-default
+//    &:before
+//      background-color: main-1
+//      transform: translateY(0)
+//  
+//  //  LUXURY
+//  &.luxury
+//    font-weight: 500
+//    color: text-dark
+//    &:before
+//      background-color: main-1
+//      transform: translateY(0)
+//    &:hover
+//      padding-{align}: (baseline/3*2)
+//      transform: translateY(anchor-luxury-up)
+//      &:before
+//        bottom: anchor-luxury-up
+//        width: anchor-luxury-width
+//        height: 100%

@@ -1,0 +1,61 @@
+ul, ol, li
+  list-style: none
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+ul.list,
+ol.list
+  padding-{align}: list-counter-width
+  
+  li
+    padding-{align}: baseline+(baseline/3*2) - list-counter-width
+
+ul.list,
+ul.list li
+  list-style-type: ul-style
+
+ol.list,
+ol.list li
+  list-style-type: ol-style
+
+ul.list-inline li,
+ol.list-inline li
+  display: inline-block
+
+
+
+ul.blocks,
+ol.blocks,
+ul.blocks-inline,
+ol.blocks-inline
+  display: block
+  
+  & > li
+    display: block
+    position: relative
+    width: 100%
+
+ul.blocks-inline > li,
+ol.blocks-inline > li
+  float: align
+  width: auto
+
+ul.blocks-inline.half > li,
+ol.blocks-inline.half > li,
+ul.blocks-inline.thirds > li,
+ol.blocks-inline.thirds > li,
+ul.blocks-inline.quarter > li,
+ol.blocks-inline.quarter > li
+  width: 100%
+
+@media (min-width: 550px)
+  ul.blocks-inline.half > li,
+  ol.blocks-inline.half > li
+    width: (100%/2)
+  ul.blocks-inline.thirds > li,
+  ol.blocks-inline.thirds > li
+    width: (100%/3)
+  ul.blocks-inline.quarter > li,
+  ol.blocks-inline.quarter > li
+    width: (100%/4)
