@@ -1,0 +1,17 @@
+{
+  "msgConfirmation": "Please Confirm Subscription",
+  "btnConfirmation": "yes, subscribe me to this list",
+  "txtConfirmation1": "If you received this email by mistake, simply delete it. you won't be subscribed if you don't click the confirmation button above.",
+  "txtConfirmation2": "For questions about this list, please contact:",
+  
+  "msgWelcome": "Congratulations",
+  "txtWelcome": "You've been added to our newsletter and will now be among the first to hear about the new services, projects, and design shots we make.",
+  
+  "msgUnsubscribe": "We're Sorry To See You Going",
+  "txtUnsubscribe1": "You've been removed from our newsletter. And you won't receive any more emails from us.",
+  "txtUnsubscribe2": "If this was by mistake, you can subscribe again from:",
+  "txtUnsubscribe3": "It was nice having you aboard.",
+  
+  "unsubscribe": "unsubscribe",
+  "team": "nucubuc team"
+}

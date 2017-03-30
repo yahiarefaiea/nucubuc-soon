@@ -1,0 +1,20 @@
+{
+  "msgSoon1": "you're in the right place..",
+  "msgSoon2": "but in the wrong time.",
+  "txtSoon": "hopefully you will come back when we're ready.",
+  
+  "formPlaceholder": "sign up for email updates",
+  "formEmail": "your email",
+  "formName": "your name",
+  "formErrorEmail": "email address is invalid",
+  "formErrorName": "enter your name to continue",
+  "formNext": "Next",
+  "formSend": "Sign Up",
+  
+  "msgConfirmation": "you're almost there..",
+  "txtConfirmation": "check your email to confirm the subscription",
+  "msgWelcome": "congratulations..",
+  "txtWelcome": "you've been added to our newsletter",
+  "msgUnsubscribe": "we're sorry to see you going..",
+  "txtUnsubscribe": "you've been removed from our newsletter"
+}
