@@ -59,7 +59,8 @@ gulp.task('pug-en', function() {
       pretty: true,
       data: {
         root: JSON.parse(require('fs').readFileSync(root+'/data/en/root.json')),
-        soon: JSON.parse(require('fs').readFileSync(root+'/data/en/soon.json'))
+        soon: JSON.parse(require('fs').readFileSync(root+'/data/en/soon.json')),
+        newsletter: JSON.parse(require('fs').readFileSync(root+'/data/en/newsletter.json'))
       }
      }))
     .pipe(gulp.dest(dest));
@@ -70,7 +71,8 @@ gulp.task('pug-ar', function() {
       pretty: true,
       data: {
         root: JSON.parse(require('fs').readFileSync(root+'/data/ar/root.json')),
-        soon: JSON.parse(require('fs').readFileSync(root+'/data/ar/soon.json'))
+        soon: JSON.parse(require('fs').readFileSync(root+'/data/ar/soon.json')),
+        newsletter: JSON.parse(require('fs').readFileSync(root+'/data/ar/newsletter.json'))
       }
      }))
     .pipe(gulp.dest(dest+'/ar'));

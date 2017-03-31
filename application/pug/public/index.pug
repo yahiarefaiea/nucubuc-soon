@@ -28,19 +28,19 @@ block content
         //  STATUS CASE
         .statusCase
           h1.h4.home #{root.whoWeAre}
-          .h4.typing #{soon.formPlaceholder}
-          .h4.errorEmail #{soon.formErrorEmail}
-          .h4.errorName #{soon.formErrorName}
+          .h4.typing #{newsletter.placeholder}
+          .h4.errorEmail #{newsletter.errorEmail}
+          .h4.errorName #{newsletter.errorName}
         
         //  FORM CASE
         .formCase: form
           .material-icons mail_outline
-          .placeholder #{soon.formPlaceholder}
-          input#form_email(type="email", name="form_email", placeholder=soon.formEmail, dir="ltr")
-          input#form_name(type="text", name="form_name", placeholder=soon.formName)
+          .placeholder #{newsletter.placeholder}
+          input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr")
+          input#form_name(type="text", name="form_name", placeholder=newsletter.name)
           .clicks
-            input#next(type="button", title=soon.formNext)
-            input#send(type="submit", value="", title=soon.formSend, disabled)
+            input#next(type="button", title=newsletter.next)
+            input#send(type="submit", value="", title=newsletter.send, disabled)
         
         //  DETAILS CASE
         .detailsCase
