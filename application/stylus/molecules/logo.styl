@@ -1,6 +1,6 @@
 #logo
   position: relative
-  width: logo-width
+  width: logo-letters-width
   height: logo-height
   margin: 0 auto
   transition: transition
@@ -25,6 +25,7 @@ svg(a, b, c, d)
 
 //  SYMBOL
 #logo .symbol
+  left: -16px  //  Must stay constant
   width: logo-symbol-width
   height: logo-height
   div
@@ -47,8 +48,7 @@ svg(a, b, c, d)
 
 //  LETTERS
 #logo .letters
-  top: 8px
-  left: 16px  //  Must stay constant
+  top: 7px
   width: logo-letters-width
   height: logo-letters-height
   svg
@@ -63,7 +63,7 @@ svg(a, b, c, d)
     &:nth-child(4)
       svg: 0, 75, 24, 25
     &:nth-child(5)
-      svg: 0, 101, 26, 32
+      svg: 0, 101, 26, 33
     &:nth-child(6)
       svg: 0, 129, 24, 25
     &:nth-child(7)
