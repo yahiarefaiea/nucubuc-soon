@@ -11,26 +11,26 @@ block content
         include ../includes/logo
         
         //  MESSAGE CASE
-        //        .messageCase
-        //          .h1.soon1 #{soon.msgSoon1}
-        //          .h1.soon2 #{soon.msgSoon2}
-        //          .h1.confirmation #{soon.msgConfirmation}
-        //          .h1.welcome #{soon.msgWelcome}
-        //          .h1.unsubscribe #{soon.msgUnsubscribe}
+        .messageCase
+          .h1.soon1: div #{soon.msgSoon1}
+          .h1.soon2: div #{soon.msgSoon2}
+          .h1.confirmation: div #{soon.msgConfirmation}
+          .h1.welcome: div #{soon.msgWelcome}
+          .h1.unsubscribe: div #{soon.msgUnsubscribe}
         
         //  TEXT CASE
-        //        .textCase
-        //          .soon #{soon.txtSoon}
-        //          .confirmation #{soon.txtConfirmation}
-        //          .welcome #{soon.txtWelcome}
-        //          .unsubscribe #{soon.txtUnsubscribe}
+        .textCase
+          .soon #{soon.txtSoon}
+          .confirmation #{soon.txtConfirmation}
+          .welcome #{soon.txtWelcome}
+          .unsubscribe #{soon.txtUnsubscribe}
         
         //  STATUS CASE
-        //        .statusCase
-        //          h1.h4.home #{root.whoWeAre}
-        //          .h4.typing #{newsletter.placeholder}
-        //          .h4.errorEmail #{newsletter.errorEmail}
-        //          .h4.errorName #{newsletter.errorName}
+        .statusCase
+          h1.h4.home #{root.whoWeAre}
+          .h4.typing #{newsletter.placeholder}
+          .h4.errorEmail #{newsletter.errorEmail}
+          .h4.errorName #{newsletter.errorName}
         
         //  FORM CASE
         //        .formCase: form
@@ -59,7 +59,7 @@ block content
       
       
       //  COPYRIGHTS
-      //      section.copyrights: small
-      //        |©#{root.year} 
-      //        a.underline(href=root.url, title=root.url, target="_blank") #{root.author}
-      //        |. #{root.copyrights}
+      section.copyrights: small
+        |©#{root.year} 
+        a.underline(href=root.url, title=root.url, target="_blank") #{root.author}
+        |. #{root.copyrights}

@@ -1,3 +1,8 @@
+messageCase-height= baseline*2+(baseline/3)
+textCase-height= baseline+(baseline/3)
+
+
+//  MAIN
 .soon
   overflow: hidden
   height: 100%
@@ -5,72 +10,90 @@
   .container
     width: 100%
     height: 100%
-  section
-    z-index: 1
-    position: absolute
-    {align}: 0
-    width: 100%
+    > section
+      z-index: 1
+      position: absolute
+      {align}: 0
+      width: 100%
 
 
 //  COPYRIGHTS
-//.soon .copyrights
-//  bottom: baseline
-//  height: baseline
-//  small
-//    display: block
-//    position: absolute
-//    bottom: 0
-//    {align}: 0
-//    width: 100%
-//    text-transform: lowercase
-
-
-
+.soon .copyrights
+  bottom: baseline
+  height: baseline
+  small
+    display: block
+    position: absolute
+    bottom: 0
+    {align}: 0
+    width: 100%
+    text-transform: lowercase
 
 
 //  ROOT
 .soon .root
   top: 50%
+  height: (logo-height + baseline) + (messageCase-height*2) + (textCase-height + (baseline/3))
+  //  height:      logo                   messageCase                    textCase
   transform: translateY(-50%)
-
-
-
-
-
-
-
-
+  transition: transition-luxury
+.loading .soon .root
+  height: logo-height
 
 
 //  LOGO
-//.soon .root #logo
-//  margin-bottom: baseline
+.soon .root #logo
+  margin-bottom: baseline
+
+
 //  MESSAGE CASE
-//.soon .root .messageCase
-//  position: relative
-//  height: (baseline*2+(baseline/3))*2
-//  & > *
-//    display: block
-//    position: absolute
-//    bottom: 0
-//    {align}: 0
-//    width: 100%
-//  .soon1
-//    bottom: baseline*2+(baseline/3)
+.soon .root .messageCase
+  position: relative
+  height: messageCase-height*2
+  > *
+    overflow: hidden
+    position: absolute
+    bottom: 0
+    {align}: 0
+    width: 100%
+    height: messageCase-height
+    &.soon1
+      bottom: messageCase-height
+    > div
+      z-index: 1
+      position: absolute
+      bottom: -(translate*4)
+      {align}: 0
+      width: 100%
+      transition: transition-luxury
+.soon.home .root .messageCase .soon1 > div,
+.soon.home .root .messageCase .soon2 > div,
+.soon.confirmation .root .messageCase .confirmation > div,
+.soon.welcome .root .messageCase .welcome > div,
+.soon.unsubscribe .root .messageCase .unsubscribe > div
+  bottom: 0
 
 
 //  TEXT CASE
-//.soon .root .textCase
-//  position: relative
-//  height: baseline+(baseline/3)
-//  margin-bottom: (baseline/3)
-//  & > *
-//    display: block
-//    position: absolute
-//    bottom: 0
-//    {align}: 0
-//    width: 100%
-//    line-height: baseline+(baseline/3)
+.soon .root .textCase
+  overflow: hidden
+  position: relative
+  height: textCase-height
+  margin-bottom: (baseline/3)
+  > div
+    z-index: 1
+    position: absolute
+    bottom: -(translate*3)
+    {align}: 0
+    width: 100%
+    line-height: textCase-height
+    transition: transition-luxury
+.soon.home .root .textCase .soon,
+.soon.confirmation .root .textCase .confirmation,
+.soon.welcome .root .textCase .welcome,
+.soon.unsubscribe .root .textCase .unsubscribe
+  bottom: 0
+
 
 
 //  STATUS CASE
