@@ -1,5 +1,12 @@
 $(document).ready(function() {
   
+  //  ITERATION COUNT
+  var x= 1
+  var iterationCount=setInterval(function() {
+    x= ++x
+  }, 1600);   //  (.2s * 2) * 4 = 1.6s
+  
+  
   // JPRELOADER INIT
   $('body').jpreLoader({
     showSplash: true,
@@ -9,8 +16,16 @@ $(document).ready(function() {
   }, function() {
     
     setTimeout(function() {
-//      $('body').removeClass('loading');
-    }, 1200);
+      $('body #logo .symbol > div')
+        .attr('style', 'animation-iteration-count:'+x+'; -webkit-animation-iteration-count:'+x);
+      clearInterval(iterationCount);
+      
+      setTimeout(function() {
+        $('body').removeClass('loading');
+        $('#logo .symbol > div').removeAttr('style');
+      }, 1600);
+      
+    }, 200);
     
   });
   
