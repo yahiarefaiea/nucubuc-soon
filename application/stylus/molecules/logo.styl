@@ -3,12 +3,15 @@
   width: logo-letters-width
   height: logo-height
   margin: 0 auto
-  transition: transition
+  transition: transition-luxury
   div, svg
     display: block
     position: absolute
     top: 0
     left: 0 //  Must stay constant
+
+.loading #logo
+  width: (logo-symbol-width - 16px)
 
 
 //  MIXINS
@@ -16,11 +19,10 @@ symbol(a, b, c)
   top: unit(a, px)
   left: unit(b, px) //  Must stay constant
   background-color: c
-svg(a, b, c, d)
-  bottom: unit(a, px)
-  left: unit(b, px) //  Must stay constant
-  width: unit(c, px)
-  height: unit(d, px)
+svg(a, b, c)
+  left: unit(a, px) //  Must stay constant
+  width: unit(b, px)
+  height: unit(c, px)
 
 
 //  SYMBOL
@@ -48,23 +50,31 @@ svg(a, b, c, d)
 
 //  LETTERS
 #logo .letters
+  overflow: hidden
   top: 7px
   width: logo-letters-width
   height: logo-letters-height
   svg
     top: auto
+    bottom: 0
     fill: letters
+    luxuryMixin: 1, 7
     &:nth-child(1)
-      svg: 0, 0, 24, 25
+      svg: 0, 24, 25
     &:nth-child(2)
-      svg: 0, 25, 24, 25
+      svg: 25, 24, 25
     &:nth-child(3)
-      svg: 0, 50, 23, 27
+      svg: 50, 23, 27
     &:nth-child(4)
-      svg: 0, 75, 24, 25
+      svg: 75, 24, 25
     &:nth-child(5)
-      svg: 0, 101, 26, 33
+      svg: 101, 26, 33
     &:nth-child(6)
-      svg: 0, 129, 24, 25
+      svg: 129, 24, 25
     &:nth-child(7)
-      svg: 0, 154, 23, 27
+      svg: 154, 23, 27
+
+.loading #logo .letters svg:nth-child(1)
+  fill: white
+.loading #logo .letters svg:not(:nth-child(1))
+  bottom: -(translate*3)

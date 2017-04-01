@@ -44,9 +44,19 @@ selection-color= white
 //  TRANSITION
 easing= ease
 duration= .2s
+transition= all duration easing
 easing-luxury= cubic-bezier(0.190,1.000,0.220,1.000)
 duration-luxury= duration*2
-transition= all duration easing
+transition-luxury= all duration-luxury easing-luxury
+
+step= .03
+pattern= 1.16
+luxuryMixin(min, max)
+  d= 0
+  for a in min..max
+    d= (d+step)*pattern
+    &:nth-child({a})
+      transition: all (duration-luxury+d) easing-luxury unit(d, 's')
 
 
 //  OUTLINE

@@ -9,7 +9,7 @@ $(document).ready(function() {
   }, function() {
     
     setTimeout(function() {
-      $('body').removeClass('loading');
+//      $('body').removeClass('loading');
     }, 1200);
     
   });
