@@ -51,6 +51,10 @@ transition-luxury= all (duration-luxury*4) easing-luxury
 
 step= .03
 pattern= 1.16
+dur= 0
+for a in 1..20
+  dur= (dur+step)*pattern
+  define('duration'+a, unit(dur, 's'))
 luxuryMixin(min, max)
   d= 0
   for a in min..max

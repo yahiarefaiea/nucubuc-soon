@@ -1,5 +1,6 @@
 messageCase-height= baseline*2+(baseline/3)
 textCase-height= baseline+(baseline/3)
+statusCase-height= baseline+(baseline/3)
 
 
 //  MAIN
@@ -33,8 +34,8 @@ textCase-height= baseline+(baseline/3)
 //  ROOT
 .soon .root
   top: 50%
-  height: (logo-height + baseline) + (messageCase-height*2) + (textCase-height + (baseline/3))
-  //  height:      logo                   messageCase                    textCase
+  height: (logo-height+baseline)+(messageCase-height*2)+(textCase-height+(baseline/3))+(statusCase-height+(baseline/3*2))
+  //##    logo                   messageCase            textCase                       statusCase
   transform: translateY(-50%)
   transition: transition-luxury
 .loading .soon .root
@@ -65,7 +66,7 @@ textCase-height= baseline+(baseline/3)
       bottom: -(translate*4)
       {align}: 0
       width: 100%
-      transition: transition-luxury
+      transition: transition-luxury (duration3+0.5)
 .soon.home .root .messageCase .soon1 > div,
 .soon.home .root .messageCase .soon2 > div,
 .soon.confirmation .root .messageCase .confirmation > div,
@@ -87,7 +88,7 @@ textCase-height= baseline+(baseline/3)
     {align}: 0
     width: 100%
     line-height: textCase-height
-    transition: transition-luxury
+    transition: transition-luxury (duration8+0.5)
 .soon.home .root .textCase .soon,
 .soon.confirmation .root .textCase .confirmation,
 .soon.welcome .root .textCase .welcome,
@@ -95,16 +96,23 @@ textCase-height= baseline+(baseline/3)
   bottom: 0
 
 
-
 //  STATUS CASE
-//.soon .root .statusCase
-//  position: relative
-//  height: baseline+(baseline/3)
-//  margin-bottom: (baseline/3*2)
-//  & > *
-//    display: block
-//    position: absolute
-//    bottom: 0
-//    {align}: 0
-//    width: 100%
-//    line-height: baseline+(baseline/3)
+.soon .root .statusCase
+  position: relative
+  overflow: hidden
+  height: statusCase-height
+  margin-bottom: (baseline/3*2)
+  > h1,
+  > div
+    z-index: 1
+    position: absolute
+    bottom: -(translate*3)
+    {align}: 0
+    width: 100%
+    line-height: statusCase-height
+    transition: transition-luxury (duration9+0.5)
+.soon.home:not(.typing):not(.errorEmail):not(.errorName) .root .statusCase .home,
+.soon.typing .root .statusCase .typing,
+.soon.errorEmail .root .statusCase .errorEmail,
+.soon.errorName .root .statusCase .errorName
+  bottom: 0
