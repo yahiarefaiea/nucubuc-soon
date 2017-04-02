@@ -1,7 +1,7 @@
 extends ../layouts/public
 
 block content
-  .wrapper.soon
+  .wrapper.soon.delay
     .container
       
       //  ROOT
@@ -33,12 +33,13 @@ block content
           .h4.errorName #{newsletter.errorName}
         
         //  FORM CASE
-        //        .formCase: form
-        //          .material-icons mail_outline
-        //          .placeholder #{newsletter.placeholder}
-        //          input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr")
-        //          input#form_name(type="text", name="form_name", placeholder=newsletter.name)
-        //          .clicks
+        .formCase: form
+          .material-icons mail_outline
+          .inputs
+            .placeholder #{newsletter.placeholder}
+            input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr")
+            input#form_name(type="text", name="form_name", placeholder=newsletter.name)
+          .clicks: .click
         //            input#next(type="button", title=newsletter.next)
         //            input#send(type="submit", value="", title=newsletter.send, disabled)
         

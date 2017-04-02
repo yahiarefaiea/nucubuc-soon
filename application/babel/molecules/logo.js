@@ -24,8 +24,11 @@ $(document).ready(function() {
         $('body').removeClass('loading')
         $('#logo .symbol > div').removeAttr('style')
         
-        if($('.wrapper').hasClass('soon'))
+        if($('.wrapper').hasClass('soon')) {
           $('.soon').addClass('home')
+          setTimeout(function() { $('.soon').removeClass('delay') }, 5000)
+        }
+        
       }, 1600)
       
     }, 200)
