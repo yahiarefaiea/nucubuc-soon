@@ -28,7 +28,7 @@ symbolRotate(min, max)
     position: absolute
     top: 0
     left: 0
-.loading #logo
+.waiting #logo
   width: logo-symbol-width*2.3
 
 
@@ -58,7 +58,7 @@ symbolRotate(min, max)
       symbol: 4, 2, nuc2
     &:nth-child(5) > div
       symbol: 3, 4, nuc1
-.loading #logo .symbol
+.waiting #logo .symbol
   left: 0
   > div
     symbolRotate: 1, 5
@@ -89,6 +89,5 @@ symbolRotate(min, max)
       svg: 129, 24, 25
     &:nth-child(7)
       svg: 154, 23, 27
-
-.loading #logo .letters svg
+.waiting #logo .letters svg
   bottom: -(translate*3)

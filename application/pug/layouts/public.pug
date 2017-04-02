@@ -19,9 +19,10 @@ html(lang=root.lang, dir=root.dir)
     script(src="includes/javascripts/nuc.lite.js")
   
   //##  BODY  ##
-  body.loading
+  body.waiting.page.delay
     
     //  CONTENT
     block content
   
-  img(src="images/", style="display: none")
+  img(src="includes/images/nucubuc-logo.png", title=root.author+", "+root.description, style="display: none")
+  img(src="includes/images/nucubuc-symbol.png", title=root.author+", "+root.description, style="display: none")
