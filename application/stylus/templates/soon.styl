@@ -4,7 +4,7 @@ statusCase-height= baseline+(baseline/3)
 formCase-width= 190px
 formCase-height= input-height
 formCase-border= 3px
-formCase-clicks-width= baseline+(baseline/3)
+formCase-click-width= baseline+(baseline/3)
 absolute()
   z-index: 1
   position: absolute
@@ -12,10 +12,8 @@ absolute()
   width: 100%
 
 
-//  UN-CRAFTED !
-
 //  TRANSITION DELAY
-.soon.delay .root
+.delay .soon .root
   &,
   .messageCase > * > div
     transition: transition-luxury 1.6s
@@ -28,8 +26,14 @@ absolute()
   .formCase .material-icons,
   .formCase .inputs > *
     transition: transition-luxury (duration12+1.6)
-
-//  UN-CRAFTED !
+  .detailsCase .social li:nth-child(1)
+    transition: transition-luxury (duration13+1.6)
+  .detailsCase .social li:nth-child(2)
+    transition: transition-luxury (duration14+1.6)
+  .detailsCase .social li:nth-child(3)
+    transition: transition-luxury (duration15+1.6)
+  .detailsCase address.mail
+    transition: transition-luxury (duration16+1.6)
 
 
 //  MAIN
@@ -55,7 +59,7 @@ absolute()
     bottom: 1px
     text-transform: lowercase
     transition: transition-luxury
-.loading .soon .copyrights small
+.waiting.page .soon .copyrights small
   bottom: -(translate*3)
 
 
@@ -66,12 +70,13 @@ absolute()
   textCase= textCase-height + (baseline/3)
   statusCase= statusCase-height + (baseline/3*2)
   formCase= formCase-height + formCase-border + baseline
-  height: logo + messageCase + textCase + statusCase + formCase
+  detailsCase= social-height + (baseline/3) + baseline
+  height: logo + messageCase + textCase + statusCase + formCase + detailsCase
   
   top: 50%
   transform: translateY(-50%)
   transition: transition-luxury
-.loading .soon .root
+.waiting.page .soon .root
   height: logo-height
 
 
@@ -131,11 +136,10 @@ absolute()
     absolute()
     bottom: -(translate*3)
     line-height: statusCase-height
-    transition: transition-luxury
-.soon.home:not(.typing):not(.errorEmail):not(.errorName) .root .statusCase .home,
+    transition: transition-luxury duration7
+.soon.home:not(.typing):not(.next) .root .statusCase .home,
 .soon.typing .root .statusCase .typing,
-.soon.errorEmail .root .statusCase .errorEmail,
-.soon.errorName .root .statusCase .errorName
+.soon.next .root .statusCase .enterName
   bottom: 0
 
 
@@ -147,7 +151,7 @@ absolute()
   margin: 0 auto
   margin-bottom: baseline
   transition: transition-luxury duration8
-.loading .soon .root .formCase
+.waiting.page .soon .root .formCase
   width: 0
 
 //  After
@@ -174,7 +178,7 @@ absolute()
   {align}: -(24px + (baseline/3*2))
   line-height: formCase-height
   transition: transition-luxury duration12
-.loading .soon .root .formCase .material-icons
+.waiting.page .soon .root .formCase .material-icons
   opacity: 0
 
 //  Inputs
@@ -192,33 +196,32 @@ absolute()
     line-height: input-height
     white-space: nowrap
     color: input-color
+  input
+    padding-{align-alt}: formCase-click-width+(baseline/3*2)
 .soon.home:not(.typing) .root .formCase .placeholder,
 .soon.typing .root .formCase #form_email,
 .soon.typing.next .root .formCase #form_name
   bottom: 0
-
-
-//  GOOD UP HERE !
-
-
+.soon.typing.next .root .formCase #form_email
+  bottom: formCase-height
 
 //  Clicks
 .soon .root .formCase .clicks
   absolute()
-  overflow: hidden
   z-index: -1
+  overflow: hidden
   bottom: formCase-border
   height: formCase-height
-  transition: transition-luxury
-  
+  transition: transition-luxury duration3
   .click
     position: absolute
     bottom: -(translate*3)
     {align}: 0
-    width: formCase-clicks-width
+    width: formCase-click-width
     height: 100%
-    margin-{align}: 4px
-    transition: transition-luxury
+    margin-{align}: 3px
+    padding: 1px  //  To show outline on focus
+    transition: transition-luxury duration3
     background-color: border-default
     &:after
       @extend .material-icons
@@ -227,17 +230,31 @@ absolute()
       position: absolute
       bottom: 0
       {align-alt}: translate*10
-      width: formCase-clicks-width
+      width: formCase-click-width
       line-height: formCase-height
-      transition: transition-luxury
+      transition: transition-luxury duration4
+    input
+      z-index: 3
+      position: relative
+      padding: 0
+      height: (formCase-height - 2px)   //  To show outline on focus
+      &,
+      &:hover
+        outline: outline-width outline-style transparent
+        text-decoration: none
+      &:focus
+        outline: outline
+      &#send
+        display: none
 .soon.typing .root .formCase .clicks .click
   bottom: 0
 .soon.typing.filled .root .formCase .clicks
   z-index: 2
   {align}: 100%
-  width: 40px
-  margin-{align}: -(formCase-clicks-width)
+  width: formCase-click-width+(baseline/3*2)
+  margin-{align}: -(formCase-click-width)
   .click
+    margin-{align}: 0
     &:after
       {align-alt}: -11px
     &:hover
@@ -245,3 +262,20 @@ absolute()
       &:after
         {align-alt}: -18px
         color: letters
+.soon.typing.next .root .formCase .clicks .click input
+  &#next
+    display: none
+  &#send
+    display: block
+
+
+//  DETAILS CASE
+.soon .root .detailsCase
+  address.mail
+    @extend .small
+    margin-top: (baseline/3)
+    font-style: normal
+.waiting.page .soon .root .detailsCase .social li,
+.waiting.page .soon .root .detailsCase address.mail
+  transform: translateY(translate/2)
+  opacity: 0

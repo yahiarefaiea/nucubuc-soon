@@ -2,7 +2,7 @@
 function iterationCount() {
   $('body').addClass('waiting')
   x= 1,
-  iteration=setInterval(function() {
+  iteration= setInterval(function() {
     x= ++x
   }, 1600)   //  (.2s * 2) * 4 = 1.6s
 }
@@ -40,7 +40,7 @@ $(document).ready(function() {
         //  SOON.PUG
         if($('.wrapper').hasClass('soon')) {
           $('.soon').addClass('home')
-          setTimeout(function() { $('body').removeClass('delay') }, 6000)
+          setTimeout(function() { $('body').removeClass('delay') }, 4000)
         }
         
       }, 1600)

@@ -11,52 +11,51 @@ block content
         include ../includes/logo
         
         //  MESSAGE CASE
-        //        .messageCase
-        //          .h1.soon1: div #{soon.msgSoon1}
-        //          .h1.soon2: div #{soon.msgSoon2}
-        //          .h1.confirmation: div #{soon.msgConfirmation}
-        //          .h1.welcome: div #{soon.msgWelcome}
-        //          .h1.unsubscribe: div #{soon.msgUnsubscribe}
+        .messageCase
+          .h1.soon1: div #{soon.msgSoon1}
+          .h1.soon2: div #{soon.msgSoon2}
+          .h1.confirmation: div #{soon.msgConfirmation}
+          .h1.welcome: div #{soon.msgWelcome}
+          .h1.unsubscribe: div #{soon.msgUnsubscribe}
         
         //  TEXT CASE
-        //        .textCase
-        //          .soon #{soon.txtSoon}
-        //          .confirmation #{soon.txtConfirmation}
-        //          .welcome #{soon.txtWelcome}
-        //          .unsubscribe #{soon.txtUnsubscribe}
+        .textCase
+          .soon #{soon.txtSoon}
+          .confirmation #{soon.txtConfirmation}
+          .welcome #{soon.txtWelcome}
+          .unsubscribe #{soon.txtUnsubscribe}
         
         //  STATUS CASE
-        //        .statusCase
-        //          h1.h4.home #{root.whoWeAre}
-        //          .h4.typing #{newsletter.placeholder}
-        //          .h4.errorEmail #{newsletter.errorEmail}
-        //          .h4.errorName #{newsletter.errorName}
+        .statusCase
+          h1.h4.home #{root.whoWeAre}
+          .h4.typing #{newsletter.placeholder}
+          .h4.enterName #{newsletter.enterName}
         
         //  FORM CASE
-        //        .formCase: form
-        //          .material-icons mail_outline
-        //          .inputs
-        //            .placeholder #{newsletter.placeholder}
-        //            input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr")
-        //            input#form_name(type="text", name="form_name", placeholder=newsletter.name)
-        //          .clicks: .click
-        //            input#next(type="button", title=newsletter.next)
-        //            input#send(type="submit", value="", title=newsletter.send, disabled)
+        .formCase: form(novalidate, autocomplete="off")
+          .material-icons mail_outline
+          .inputs
+            .placeholder #{newsletter.placeholder}
+            input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr", disabled)
+            input#form_name(type="text", name="form_name", placeholder=newsletter.name, disabled)
+          .clicks: .click
+            input#next(type="button", title=newsletter.next, disabled)
+            input#send(type="submit", value="", title=newsletter.send, disabled)
         
         //  DETAILS CASE
-        //        .detailsCase
-        //          ul.social.blocks.inline
-        //            each x in root.social
-        //              li: a(href=x.url, title=x.title, target="_blank")
-        //                if x.platform == 'facebook'
-        //                  include ../includes/svg/facebook
-        //                else if x.platform == 'instagram'
-        //                  include ../includes/svg/instagram
-        //                else if x.platform == 'twitter'
-        //                  include ../includes/svg/twitter
-        //          .mail
-        //            |#{root.email}: 
-        //            a.underline(href="mailto:"+root.emailHello, title=root.emailHello) #{root.emailHello}
+        .detailsCase
+          ul.social.blocks.inline
+            each x in root.social
+              li: a(href=x.url, title=x.title, target="_blank")
+                if x.platform == 'facebook'
+                  include ../includes/svg/facebook
+                else if x.platform == 'instagram'
+                  include ../includes/svg/instagram
+                else if x.platform == 'twitter'
+                  include ../includes/svg/twitter
+          address.mail
+            |#{root.email}: 
+            a.underline(href="mailto:"+root.emailHello, title=root.emailHello) #{root.emailHello}
       
       
       //  COPYRIGHTS

@@ -2,8 +2,7 @@
   "placeholder": "sign up for email updates",
   "email": "your email",
   "name": "your name",
-  "errorEmail": "email address is invalid",
-  "errorName": "enter your name to continue",
+  "enterName": "enter your name to continue",
   "next": "Next",
   "send": "Sign Up"
 }
