@@ -5,8 +5,10 @@
   
   "msgConfirmation": "you're almost there..",
   "txtConfirmation": "check your email to confirm the subscription",
+  
   "msgWelcome": "congratulations..",
   "txtWelcome": "you've been added to our newsletter",
+  
   "msgUnsubscribe": "we're sorry to see you going..",
   "txtUnsubscribe": "you've been removed from our newsletter"
 }

@@ -20,6 +20,12 @@ input
   background-color: input-bg
   color: input-color
   
+  &,
+  &:hover,
+  &:focus
+    outline: 0
+    box-shadow: none
+  
   +placeholder()
     color: input-placeholder
     opacity: 1 !important

@@ -27,9 +27,9 @@ block content
         
         //  STATUS CASE
         .statusCase
-          h1.h4.home #{root.whoWeAre}
-          .h4.typing #{newsletter.placeholder}
-          .h4.enterName #{newsletter.enterName}
+          h1.h4.whoWeAre #{root.whoWeAre}
+          .h4.placeholder #{newsletter.placeholder}
+          .h4.msgName #{newsletter.msgName}
         
         //  FORM CASE
         .formCase: form(novalidate, autocomplete="off")
@@ -39,7 +39,7 @@ block content
             input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr", disabled)
             input#form_name(type="text", name="form_name", placeholder=newsletter.name, disabled)
           .clicks: .click
-            input#next(type="button", title=newsletter.next, disabled)
+            input#next(type="button", value="", title=newsletter.next, disabled)
             input#send(type="submit", value="", title=newsletter.send, disabled)
         
         //  DETAILS CASE

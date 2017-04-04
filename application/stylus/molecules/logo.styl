@@ -7,11 +7,11 @@ svg(a, b, c)
   width: unit(b, px)
   height: unit(c, px)
 symbolRotate(min, max)
-  d= 0
+  delay= 0
   for a in min..max
-    d= (d+step)*pattern
+    delay= (delay+step)*pattern
     &:nth-child({a})
-      animation: rotate+a (duration-luxury*4) easing-luxury unit(d, 's') infinite
+      animation: rotate+a (duration-luxury*3) easing-luxury unit(delay, 's') infinite
       @keyframes rotate{a}
         100%
           transform: rotate(360deg)
@@ -22,7 +22,7 @@ symbolRotate(min, max)
   width: logo-letters-width
   height: logo-height
   margin: 0 auto
-  transition: transition-luxury
+  luxuryTransition: 3, 0
   div, svg
     display: block
     position: absolute
@@ -37,7 +37,7 @@ symbolRotate(min, max)
   left: -16px
   width: logo-symbol-width
   height: logo-height
-  transition: transition-luxury
+  luxuryTransition: 3, 0
   > div
     width: logo-symbol-width*2.3
     height: logo-height

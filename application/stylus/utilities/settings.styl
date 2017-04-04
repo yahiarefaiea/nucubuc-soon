@@ -46,8 +46,9 @@ easing= ease
 duration= .2s
 transition= all duration easing
 easing-luxury= cubic-bezier(0.190,1.000,0.220,1.000)
-duration-luxury= duration*2
-transition-luxury= all (duration-luxury*4) easing-luxury
+duration-luxury= .5s
+luxuryTransition(x, delay)
+  transition: all ((duration-luxury*x)+delay) easing-luxury unit(delay, 's')
 
 step= .03
 pattern= 1.16
@@ -56,18 +57,24 @@ for a in 1..20
   dur= (dur+step)*pattern
   define('duration'+a, unit(dur, 's'))
 luxuryMixin(min, max)
-  d= 0
+  delay= 0
   for a in min..max
-    d= (d+step)*pattern
+    delay= (delay+step)*pattern
     &:nth-child({a})
-      transition: all (duration-luxury+d) easing-luxury unit(d, 's')
+      transition: all (duration-luxury+delay) easing-luxury unit(delay, 's')
 
 
 //  OUTLINE
 outline-width= 1px
 outline-style= dashed
 outline-color= letters
+outlineHidden= outline-width outline-style transparent
 outline= outline-width outline-style outline-color
+outlineMixin()
+  &, &:hover
+    outline: outlineHidden
+  &:focus
+    outline: outline
 
 
 //  ANCHOR
@@ -87,7 +94,7 @@ button-padding= 0 baseline
 button-border= none
 button-radius= button-height/2
 
-button-family= family-body
+button-family= inherit
 button-font= font-default
 button-weight= weight-bold
 
@@ -103,7 +110,7 @@ input-padding= 0 (baseline/3)
 input-border= none
 input-radius= 0
 
-input-family= family-body
+input-family= inherit
 input-font= font-default
 input-weight= weight-bold
 

@@ -2,7 +2,7 @@
   "placeholder": "sign up for email updates",
   "email": "your email",
   "name": "your name",
-  "enterName": "enter your name to continue",
+  "msgName": "enter your name to continue",
   "next": "Next",
   "send": "Sign Up"
 }

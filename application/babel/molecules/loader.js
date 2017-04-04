@@ -4,7 +4,7 @@ function iterationCount() {
   x= 1,
   iteration= setInterval(function() {
     x= ++x
-  }, 1600)   //  (.2s * 2) * 4 = 1.6s
+  }, 1500)   //  .5s * 3 = 1.5s
 }
 
 //  ITERATION CLEAR
@@ -17,13 +17,14 @@ function iterationClear() {
     $('body').removeClass('waiting')
     $('#logo .symbol > div').removeAttr('style')
     x= 1
-  }, 1600)
+  }, 1500)
 }
 
 
 //  DOCUMENT READY
 $(document).ready(function() {
   iterationCount()
+  $('.soon').addClass('delay')
   
   // JPRELOADER INIT
   $('body').jpreLoader({
@@ -39,11 +40,11 @@ $(document).ready(function() {
         
         //  SOON.PUG
         if($('.wrapper').hasClass('soon')) {
-          $('.soon').addClass('home')
-          setTimeout(function() { $('body').removeClass('delay') }, 4000)
+          $('.soon').addClass('main')
+          setTimeout(function() { $('.soon').removeClass('delay') }, 4000)
         }
         
-      }, 1600)
+      }, 1500)
     }, 200)
   })
 })

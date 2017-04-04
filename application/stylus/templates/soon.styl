@@ -1,281 +1,281 @@
-messageCase-height= baseline*2+(baseline/3)
-textCase-height= baseline+(baseline/3)
-statusCase-height= baseline+(baseline/3)
-formCase-width= 190px
-formCase-height= input-height
-formCase-border= 3px
-formCase-click-width= baseline+(baseline/3)
-absolute()
-  z-index: 1
-  position: absolute
-  {align}: 0
-  width: 100%
-
-
-//  TRANSITION DELAY
-.delay .soon .root
-  &,
-  .messageCase > * > div
-    transition: transition-luxury 1.6s
-  .textCase > div
-    transition: transition-luxury (duration5+1.6)
-  .statusCase > *
-    transition: transition-luxury (duration7+1.6)
-  .formCase
-    transition: transition-luxury (duration8+1.6)
-  .formCase .material-icons,
-  .formCase .inputs > *
-    transition: transition-luxury (duration12+1.6)
-  .detailsCase .social li:nth-child(1)
-    transition: transition-luxury (duration13+1.6)
-  .detailsCase .social li:nth-child(2)
-    transition: transition-luxury (duration14+1.6)
-  .detailsCase .social li:nth-child(3)
-    transition: transition-luxury (duration15+1.6)
-  .detailsCase address.mail
-    transition: transition-luxury (duration16+1.6)
+//messageCase-height= baseline*2+(baseline/3)
+//textCase-height= baseline+(baseline/3)
+//statusCase-height= baseline+(baseline/3)
+//formCase-width= 190px
+//formCase-height= input-height
+//formCase-border= 3px
+//formCase-click-width= baseline+(baseline/3)
+//absolute()
+//  z-index: 1
+//  position: absolute
+//  {align}: 0
+//  width: 100%
 
 
 //  MAIN
-.soon
-  overflow: hidden
-  height: 100%
-  text-align: center
-  .container
-    width: 100%
-    height: 100%
-    > section
-      absolute()
+//.soon
+//  overflow: hidden
+//  height: 100%
+//  text-align: center
+//  .container
+//    width: 100%
+//    height: 100%
+//    > section
+//      absolute()
 
 
 //  COPYRIGHTS
-.soon .copyrights
-  overflow: hidden
-  bottom: baseline
-  height: baseline+2px
-  small
-    absolute()
-    display: block
-    bottom: 1px
-    text-transform: lowercase
-    transition: transition-luxury
-.waiting.page .soon .copyrights small
-  bottom: -(translate*3)
+//.soon .copyrights
+//  overflow: hidden
+//  bottom: baseline
+//  height: baseline+2px
+//  small
+//    absolute()
+//    display: block
+//    bottom: 1px
+//    text-transform: lowercase
+//    transition: transition-luxury
+//.waiting.page .soon .copyrights small
+//  bottom: -(translate*3)
 
 
 //  ROOT
-.soon .root
-  logo= logo-height+baseline
-  messageCase= messageCase-height*2
-  textCase= textCase-height + (baseline/3)
-  statusCase= statusCase-height + (baseline/3*2)
-  formCase= formCase-height + formCase-border + baseline
-  detailsCase= social-height + (baseline/3) + baseline
-  height: logo + messageCase + textCase + statusCase + formCase + detailsCase
-  
-  top: 50%
-  transform: translateY(-50%)
-  transition: transition-luxury
-.waiting.page .soon .root
-  height: logo-height
+//.soon .root
+//  logo= logo-height+baseline
+//  messageCase= messageCase-height*2
+//  textCase= textCase-height + (baseline/3)
+//  statusCase= statusCase-height + (baseline/3*2)
+//  formCase= formCase-height + formCase-border + baseline
+//  detailsCase= social-height + (baseline/3) + baseline
+//  height: logo + messageCase + textCase + statusCase + formCase + detailsCase
+//  
+//  top: 50%
+//  transform: translateY(-50%)
+//  transition: transition-luxury
+//.waiting.page .soon .root
+//  height: logo-height
 
 
 //  LOGO
-.soon .root #logo
-  margin-bottom: baseline
+//.soon .root #logo
+//  margin-bottom: baseline
 
 
 //  MESSAGE CASE
-.soon .root .messageCase
-  position: relative
-  height: messageCase-height*2
-  > *
-    absolute()
-    overflow: hidden
-    bottom: 0
-    height: messageCase-height
-    &.soon1
-      bottom: messageCase-height
-    > div
-      absolute()
-      bottom: -(translate*4)
-      transition: transition-luxury
-.soon.home .root .messageCase .soon1 > div,
-.soon.home .root .messageCase .soon2 > div,
-.soon.confirmation .root .messageCase .confirmation > div,
-.soon.welcome .root .messageCase .welcome > div,
-.soon.unsubscribe .root .messageCase .unsubscribe > div
-  bottom: 0
+//.soon .root .messageCase
+//  position: relative
+//  height: messageCase-height*2
+//  > *
+//    absolute()
+//    overflow: hidden
+//    bottom: 0
+//    height: messageCase-height
+//    &.soon1
+//      bottom: messageCase-height
+//    > div
+//      absolute()
+//      bottom: -(translate*4)
+//      transition: transition-luxury
+//.soon.home .root .messageCase .soon1 > div,
+//.soon.home .root .messageCase .soon2 > div,
+//.soon.confirmation .root .messageCase .confirmation > div,
+//.soon.welcome .root .messageCase .welcome > div,
+//.soon.unsubscribe .root .messageCase .unsubscribe > div
+//  bottom: 0
 
 
 //  TEXT CASE
-.soon .root .textCase
-  overflow: hidden
-  position: relative
-  height: textCase-height
-  margin-bottom: (baseline/3)
-  > div
-    absolute()
-    bottom: -(translate*3)
-    line-height: textCase-height
-    transition: transition-luxury duration5
-.soon.home .root .textCase .soon,
-.soon.confirmation .root .textCase .confirmation,
-.soon.welcome .root .textCase .welcome,
-.soon.unsubscribe .root .textCase .unsubscribe
-  bottom: 0
+//.soon .root .textCase
+//  overflow: hidden
+//  position: relative
+//  height: textCase-height
+//  margin-bottom: (baseline/3)
+//  > div
+//    absolute()
+//    bottom: -(translate*3)
+//    line-height: textCase-height
+//    transition: transition-luxury duration5
+//.soon.home .root .textCase .soon,
+//.soon.confirmation .root .textCase .confirmation,
+//.soon.welcome .root .textCase .welcome,
+//.soon.unsubscribe .root .textCase .unsubscribe
+//  bottom: 0
 
 
 //  STATUS CASE
-.soon .root .statusCase
-  overflow: hidden
-  position: relative
-  height: statusCase-height
-  margin-bottom: (baseline/3*2)
-  > *
-    absolute()
-    bottom: -(translate*3)
-    line-height: statusCase-height
-    transition: transition-luxury duration7
-.soon.home:not(.typing):not(.next) .root .statusCase .home,
-.soon.typing .root .statusCase .typing,
-.soon.next .root .statusCase .enterName
-  bottom: 0
+//.soon .root .statusCase
+//  overflow: hidden
+//  position: relative
+//  height: statusCase-height
+//  margin-bottom: (baseline/3*2)
+//  > *
+//    absolute()
+//    bottom: -(translate*3)
+//    line-height: statusCase-height
+//    transition: transition-luxury duration7
+//.soon.home:not(.typing):not(.next) .root .statusCase .home,
+//.soon.typing .root .statusCase .typing,
+//.soon.next .root .statusCase .enterName
+//  bottom: 0
 
 
 //  FORM CASE
-.soon .root .formCase
-  position: relative
-  width: formCase-width
-  height: formCase-height + formCase-border
-  margin: 0 auto
-  margin-bottom: baseline
-  transition: transition-luxury duration8
-.waiting.page .soon .root .formCase
-  width: 0
+//.soon .root .formCase
+//  position: relative
+//  width: formCase-width
+//  height: formCase-height + formCase-border
+//  margin: 0 auto
+//  margin-bottom: baseline
+//  transition: transition-luxury duration8
+//.waiting.page .soon .root .formCase
+//  width: 0
 
 //  After
-.soon .root .formCase
-  &:after
-    absolute()
-    content: ''
-    display: block
-    bottom: 0
-    height: formCase-border
-    transition: transition-luxury
-    background-color: border-dark
-.soon .root .formCase:hover:after,
-.soon.typing .root .formCase:after
-  {align}: -(6%/2)
-  width: 106%
-  background-color: magenta
+//.soon .root .formCase
+//  &:after
+//    absolute()
+//    content: ''
+//    display: block
+//    bottom: 0
+//    height: formCase-border
+//    transition: transition-luxury
+//    background-color: border-dark
+//.soon .root .formCase:hover:after,
+//.soon.typing .root .formCase:after
+//  {align}: -(6%/2)
+//  width: 106%
+//  background-color: magenta
 
 //  Icon
-.soon .root .formCase .material-icons
-  display: block
-  position: absolute
-  top: 0
-  {align}: -(24px + (baseline/3*2))
-  line-height: formCase-height
-  transition: transition-luxury duration12
-.waiting.page .soon .root .formCase .material-icons
-  opacity: 0
+//.soon .root .formCase .material-icons
+//  display: block
+//  position: absolute
+//  top: 0
+//  {align}: -(24px + (baseline/3*2))
+//  line-height: formCase-height
+//  transition: transition-luxury duration12
+//.waiting.page .soon .root .formCase .material-icons
+//  opacity: 0
 
 //  Inputs
-.soon .root .formCase .inputs
-  overflow: hidden
-  position: relative
-  height: formCase-height
-  > *
-    absolute()
-    bottom: -(translate*3)
-    transition: transition-luxury
-  .placeholder
-    font-size: input-font
-    font-weight: input-weight
-    line-height: input-height
-    white-space: nowrap
-    color: input-color
-  input
-    padding-{align-alt}: formCase-click-width+(baseline/3*2)
-.soon.home:not(.typing) .root .formCase .placeholder,
-.soon.typing .root .formCase #form_email,
-.soon.typing.next .root .formCase #form_name
-  bottom: 0
-.soon.typing.next .root .formCase #form_email
-  bottom: formCase-height
+//.soon .root .formCase .inputs
+//  position: relative
+//  overflow: hidden
+//  height: formCase-height
+//  > *
+//    absolute()
+//    bottom: -(translate*3)
+//    transition: transition-luxury
+//  .placeholder
+//    font-size: input-font
+//    font-weight: input-weight
+//    line-height: input-height
+//    white-space: nowrap
+//    color: input-color
+//  input
+//    padding-{align-alt}: formCase-click-width+(baseline/3*2)
+//.soon.home:not(.typing) .root .formCase .placeholder,
+//.soon.typing .root .formCase #form_email,
+//.soon.typing.next .root .formCase #form_name
+//  bottom: 0
+//.soon.typing.next .root .formCase #form_email
+//  bottom: formCase-height
 
 //  Clicks
-.soon .root .formCase .clicks
-  absolute()
-  z-index: -1
-  overflow: hidden
-  bottom: formCase-border
-  height: formCase-height
-  transition: transition-luxury duration3
-  .click
-    position: absolute
-    bottom: -(translate*3)
-    {align}: 0
-    width: formCase-click-width
-    height: 100%
-    margin-{align}: 3px
-    padding: 1px  //  To show outline on focus
-    transition: transition-luxury duration3
-    background-color: border-default
-    &:after
-      @extend .material-icons
-      content: 'arrow_forward'
-      display: block
-      position: absolute
-      bottom: 0
-      {align-alt}: translate*10
-      width: formCase-click-width
-      line-height: formCase-height
-      transition: transition-luxury duration4
-    input
-      z-index: 3
-      position: relative
-      padding: 0
-      height: (formCase-height - 2px)   //  To show outline on focus
-      &,
-      &:hover
-        outline: outline-width outline-style transparent
-        text-decoration: none
-      &:focus
-        outline: outline
-      &#send
-        display: none
-.soon.typing .root .formCase .clicks .click
-  bottom: 0
-.soon.typing.filled .root .formCase .clicks
-  z-index: 2
-  {align}: 100%
-  width: formCase-click-width+(baseline/3*2)
-  margin-{align}: -(formCase-click-width)
-  .click
-    margin-{align}: 0
-    &:after
-      {align-alt}: -11px
-    &:hover
-      background-color: yellow
-      &:after
-        {align-alt}: -18px
-        color: letters
-.soon.typing.next .root .formCase .clicks .click input
-  &#next
-    display: none
-  &#send
-    display: block
+//.soon .root .formCase .clicks
+//  absolute()
+//  z-index: -1
+//  overflow: hidden
+//  bottom: formCase-border
+//  height: formCase-height
+//  transition: transition-luxury duration3
+//  .click
+//    position: absolute
+//    bottom: -(translate*3)
+//    {align}: 0
+//    width: formCase-click-width
+//    height: 100%
+//    margin-{align}: 3px
+//    padding: 1px  //  To show outline on focus
+//    transition: transition-luxury duration3
+//    background-color: border-default
+//    &:after
+//      @extend .material-icons
+//      content: 'arrow_forward'
+//      display: block
+//      position: absolute
+//      bottom: 0
+//      {align-alt}: translate*10
+//      width: formCase-click-width
+//      line-height: formCase-height
+//      transition: transition-luxury duration4
+//    input
+//      z-index: 3
+//      position: relative
+//      padding: 0
+//      height: (formCase-height - 2px)   //  To show outline on focus
+//      &,
+//      &:hover
+//        outline: outline-width outline-style transparent
+//        text-decoration: none
+//      &:focus
+//        outline: outline
+//      &#send
+//        display: none
+//.soon.typing .root .formCase .clicks .click
+//  bottom: 0
+//.soon.typing.filled .root .formCase .clicks
+//  z-index: 2
+//  {align}: 100%
+//  width: formCase-click-width+(baseline/3*2)
+//  margin-{align}: -(formCase-click-width)
+//  .click
+//    margin-{align}: 0
+//    &:after
+//      {align-alt}: -11px
+//    &:hover
+//      background-color: yellow
+//      &:after
+//        {align-alt}: -18px
+//        color: letters
+//.soon.typing.next .root .formCase .clicks .click input
+//  &#next
+//    display: none
+//  &#send
+//    display: block
 
 
 //  DETAILS CASE
-.soon .root .detailsCase
-  address.mail
-    @extend .small
-    margin-top: (baseline/3)
-    font-style: normal
-.waiting.page .soon .root .detailsCase .social li,
-.waiting.page .soon .root .detailsCase address.mail
-  transform: translateY(translate/2)
-  opacity: 0
+//.soon .root .detailsCase
+//  address.mail
+//    @extend .small
+//    margin-top: (baseline/3)
+//    font-style: normal
+//.waiting.page .soon .root .detailsCase .social li,
+//.waiting.page .soon .root .detailsCase address.mail
+//  transform: translateY(translate/2)
+//  opacity: 0
+
+
+//  TRANSITION DELAY
+//.delay .soon .root
+//  &,
+//  .messageCase > * > div
+//    transition: transition-luxury 1.6s
+//  .textCase > div
+//    transition: transition-luxury (duration5+1.6)
+//  .statusCase > *
+//    transition: transition-luxury (duration7+1.6)
+//  .formCase
+//    transition: transition-luxury (duration8+1.6)
+//  .formCase .material-icons,
+//  .formCase .inputs > *
+//    transition: transition-luxury (duration12+1.6)
+//  .detailsCase .social li:nth-child(1)
+//    transition: transition-luxury (duration13+1.6)
+//  .detailsCase .social li:nth-child(2)
+//    transition: transition-luxury (duration14+1.6)
+//  .detailsCase .social li:nth-child(3)
+//    transition: transition-luxury (duration15+1.6)
+//  .detailsCase address.mail
+//    transition: transition-luxury (duration16+1.6)
