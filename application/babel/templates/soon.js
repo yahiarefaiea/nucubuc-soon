@@ -17,7 +17,7 @@ function validateEmail() {
 
 //  VALIDATE NAME FUNCTION
 function regexName(name) {
-  re = /^[a-zA-Z0-9_.+-]*(?:[a-zA-Z][a-zA-Z0-9_.+-]*){2,}$/
+  re = /^[A-Za-z ]{2,}$/
   return re.test(name)
 }
 function validateName() {
@@ -51,13 +51,15 @@ $(document).ready(function() {
     
     //  PLACEHOLDER
     $('.placeholder').on('click', function() {
-      typing()
-      if(!$('.soon').hasClass('enterName')) {
-        $('#form_email').attr({'disabled': false, 'required': true})
-        setTimeout(function() { $('#form_email').focus() }, 1500)
-      } else {
-        $('#form_name').attr({'disabled': false, 'required': true})
-        setTimeout(function() { $('#form_name').focus() }, 1500)
+      if(!$('.wrapper').hasClass('delay')) {
+        typing()
+        if(!$('.soon').hasClass('enterName')) {
+          $('#form_email').attr({'disabled': false, 'required': true})
+          setTimeout(function() { $('#form_email').focus() }, 1000)
+        } else {
+          $('#form_name').attr({'disabled': false, 'required': true})
+          setTimeout(function() { $('#form_name').focus() }, 1000)
+        }
       }
     })
     
@@ -77,7 +79,7 @@ $(document).ready(function() {
       
       $('#form_email, #next').attr('disabled', true)
       $('#form_name').attr({'disabled': false, 'required': true})
-      setTimeout(function() { $('#form_name').focus() }, 1500)
+      setTimeout(function() { $('#form_name').focus() }, 1000)
       
       e.preventDefault()
     })
@@ -86,19 +88,28 @@ $(document).ready(function() {
     $('#send').on('click', function(e) {
       clearTimeout(typingTimeout)
       iterationCount()
+      $('.wrapper').addClass('delay')
       $('.soon').removeClass('main')
       $('.inputs > input').attr({'disabled': false, 'required': true})
       
       //  Inside The Ajax Callback
       setTimeout(function() {
-        iterationClear()
+        
         $('.soon').removeClass('typing filled enterName').addClass('confirmation')
         $('.inputs > input, .click > input').val('').attr({'disabled': true, 'required': false})
         
         setTimeout(function() {
-          $('.soon').removeClass('confirmation').addClass('main')
-        }, 6000)
-      }, 3000)
+          iterationClear()
+          setTimeout(function() {
+            $('.soon').removeClass('confirmation')
+            setTimeout(function() {
+              $('.soon').addClass('main')
+              setTimeout(function() { $('.wrapper').removeClass('delay') }, 3000)
+            }, 100)  //  Waiting before SHOW 'main'
+          }, 1400)    //  Waiting the 'iterationClear()' function
+        }, 6000)      //  Waiting before HIDE 'confirmation'
+      }, 3000)        //  Waiting before SHOW 'confirmation'
+      
       e.preventDefault()
     })
     

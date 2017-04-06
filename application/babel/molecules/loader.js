@@ -24,7 +24,7 @@ function iterationClear() {
 //  DOCUMENT READY
 $(document).ready(function() {
   iterationCount()
-  $('.soon').addClass('delay')
+  $('.wrapper').addClass('delay')
   
   // JPRELOADER INIT
   $('body').jpreLoader({
@@ -36,13 +36,15 @@ $(document).ready(function() {
     setTimeout(function() {
       iterationClear()
       setTimeout(function() {
-        $('body').removeClass('page')
         
         //  SOON.PUG
-        if($('.wrapper').hasClass('soon')) {
+        if($('.wrapper').hasClass('soon'))
           $('.soon').addClass('main')
-          setTimeout(function() { $('.soon').removeClass('delay') }, 4000)
-        }
+        
+        setTimeout(function() {
+          $('body').removeClass('page')
+          $('.wrapper').removeClass('delay')
+        }, 4500)
         
       }, 1500)
     }, 200)

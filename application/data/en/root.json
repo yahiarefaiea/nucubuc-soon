@@ -1,10 +1,10 @@
 {
   "lang": "en",
   "dir": "ltr",
-  "title": "Nucubuc :: Design Consultancy",
+  "title": "Nucubuc :: Web Design Consultancy",
   "author": "Nucubuc",
-  "description": "A Creative Design Consultancy",
-  "whoWeAre": "we are a creative design consultancy",
+  "description": "A Creative Web Design Consultancy",
+  "whoWeAre": "we are a creative web design consultancy",
   
   "email": "email",
   "emailHello": "hello@nucubuc.com",
@@ -17,15 +17,15 @@
   "social": [
     {
       "platform": "facebook",
-      "title": "@nucubuc on facebook",
+      "title": "Facebook (@nucubuc)",
       "url": "https://facebook.com/Nucubuc/"
     }, {
       "platform": "instagram",
-      "title": "@nucubuc on instagram",
+      "title": "Instagram (@nucubuc)",
       "url": "https://instagram.com/Nucubuc/"
     }, {
       "platform": "twitter",
-      "title": "@nucubuc on twitter",
+      "title": "Twitter (@nucubuc)",
       "url": "https://twitter.com/Nucubuc/"
     }
   ],

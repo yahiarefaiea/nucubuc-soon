@@ -15,6 +15,14 @@ translate= (baseline/3*2)
 //  84 :  baseline*4
 
 
+//  RESPONSIVE
+beta=   500px
+//alpha=  320px
+//beta=   500px
+//gamma=  600px
+//delta=  992px
+
+
 //  COLORS
 purple= #9f6eaf
 magenta= #c657a0
@@ -43,12 +51,12 @@ selection-color= white
 
 //  TRANSITION
 easing= ease
-duration= .2s
-transition= all duration easing
 easing-luxury= cubic-bezier(0.190,1.000,0.220,1.000)
+duration= .2s
 duration-luxury= .5s
-luxuryTransition(x, delay)
-  transition: all ((duration-luxury*x)+delay) easing-luxury unit(delay, 's')
+transition= all duration easing
+luxuryTransition(x=1, delay=0, d=0)
+  transition: all ((duration-luxury*x)+delay) easing-luxury unit(delay+d, 's')
 
 step= .03
 pattern= 1.16
@@ -56,6 +64,7 @@ dur= 0
 for a in 1..20
   dur= (dur+step)*pattern
   define('duration'+a, unit(dur, 's'))
+
 luxuryMixin(min, max)
   delay= 0
   for a in min..max
