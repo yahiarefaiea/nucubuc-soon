@@ -25,6 +25,7 @@ var gulp = require('gulp'),
     js = 'javascripts',
     img = 'images',
     font = 'fonts',
+    webfonts = 'webfonts',
     
     //  BANNER COMMENT
     comment =
@@ -170,8 +171,22 @@ gulp.task('stylus-ar', function() {
     .pipe(rename({extname:'.'+min+'.css'}))
     .pipe(gulp.dest(dest+'/ar/'+assets+'/'+css));
 });
+gulp.task('webfonts-en', function() {
+  return gulp.src(root+'/stylus/webfonts.styl')
+    .pipe(stylus())
+    .pipe(uglifycss())
+    .pipe(rename({basename: webfonts, extname:'.'+min+'.css'}))
+    .pipe(gulp.dest(dest+'/'+assets+'/'+css));
+});
+gulp.task('webfonts-ar', function() {
+  return gulp.src(root+'/stylus/webfonts.styl')
+    .pipe(stylus())
+    .pipe(uglifycss())
+    .pipe(rename({basename: webfonts, extname:'.'+min+'.css'}))
+    .pipe(gulp.dest(dest+'/ar/'+assets+'/'+css));
+});
 gulp.task('stylus', function() {
-  runSequence(['stylus-en', 'stylus-ar']);
+  runSequence(['stylus-en', 'stylus-ar', 'webfonts-en', 'webfonts-ar']);
 });
 
 
@@ -212,7 +227,7 @@ gulp.task('watch', function() {
   //  gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
   gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug-en', 'mails-en', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel-en', browserSync.reload]);
-  gulp.watch(root+'/stylus/**/*', ['stylus-en', browserSync.reload]);
+  gulp.watch(root+'/stylus/**/*', ['stylus-en', 'webfonts-en', browserSync.reload]);
   gulp.watch(root+'/font/**/*', ['fonts-en', browserSync.reload]);
   gulp.watch(root+'/img/**/*', ['img-en', browserSync.reload]);
 });
@@ -221,12 +236,12 @@ gulp.task('watch', function() {
 //  DEFAULT
 gulp.task('default', function() {
   //  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'fonts', 'img', 'browserSync', 'watch']);
-  runSequence(['del', 'pug-en', 'mails-en', 'babel-en', 'stylus-en', 'fonts-en', 'img-en', 'browserSync', 'watch']);
+  runSequence(['del', 'pug-en', 'mails-en', 'babel-en', 'stylus-en', 'webfonts-en', 'fonts-en', 'img-en', 'browserSync', 'watch']);
 });
 
 
 //  RELEASE
 gulp.task('release', function() {
   //  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'fonts', 'img']);
-  runSequence(['del', 'pug-en', 'mails-en', 'babel-en', 'stylus-en', 'fonts-en', 'img-en']);
+  runSequence(['del', 'pug-en', 'mails-en', 'babel-en', 'stylus-en', 'webfonts-en', 'fonts-en', 'img-en']);
 });
