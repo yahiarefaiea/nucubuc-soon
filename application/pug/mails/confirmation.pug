@@ -1,0 +1,27 @@
+extends ../layouts/mails
+
+block title
+  title #{mails.titConfirmation}
+
+block content
+  
+  //  HEADLINE
+  table(border="0", cellpadding="0", cellspacing="0", width="100%")
+    tr: td(align="center", valign="top")
+      span(style="display: block; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 900; font-size: 24px; line-height: 35px; color: #464646;") #{mails.msgConfirmation}
+  
+  //  BUTTON
+  table(border="0", cellpadding="0", cellspacing="0", width="100%")
+    tr: td(align="center", valign="top")
+      a(href="#", title=mails.btnConfirmation,
+        style="display: inline-block; margin-top: 14px; padding: 0 21px; border-radius: 18px; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 35px; text-decoration: none; background-color: #c657a0; color: #fff;") #{mails.btnConfirmation}
+  
+  //  TEXT
+  table(border="0", cellpadding="0", cellspacing="0", width="100%", style="margin-top: 21px;")
+    tr: td(align="center", valign="top")
+      span(style="display: block; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 28px; text-align: left; color: #727272;")
+        span(style="display: block;") #{mails.txtConfirmation1}
+        span(style="display: block; margin-top: 7px;")
+          |#{mails.txtConfirmation2}
+          br
+          a(href="#", title=root.emailHelp, style="color: #c657a0;") #{root.emailHelp}
