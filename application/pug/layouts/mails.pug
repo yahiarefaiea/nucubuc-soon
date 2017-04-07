@@ -1,36 +1,33 @@
-//<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 html(xmlns="http://www.w3.org/1999/xhtml")
   
   //##  HEAD  ##
   head
     meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
     block title
-      title #{root.title}
     link(rel="stylesheet", href="../includes/stylesheets/webfonts.lite.css")
   
   //##  BODY  ##
-  body
+  body(style="margin: 0;")
     
     //  ROOT
-    table(border="0", cellpadding="0", cellspacing="0", width="620px",
-          style="padding: 28px 14px 7px 14px; background-color: #eee;")
-      tr: td(align="center", valign="top")
-        
-        //  HEADER
-        table(border="0", cellpadding="0", cellspacing="0", width="100%", style="margin-bottom: 14px")
-          tr: td(align="center", valign="top")
-            a(href=root.url, target="_blank")
-              img(src="../includes/images/nucubuc-newsletter.png", height="55px",
-                  style="display: block; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 28px; color: #727272;",
-                  alt=root.author+" Newsletter", title=root.author+", "+root.description)
-        
-        //  CONTENT
-        table(border="0", cellpadding="0", cellspacing="0", width="100%",
-              style="margin-bottom: 7px; padding: 35px 56px 21px 56px; background-color: #fff;")
-          tr: td(align="center", valign="top")
-            block content
-        
-        //  FOOTER
-        table(border="0", cellpadding="0", cellspacing="0", width="100%")
-          tr: td(align="center", valign="top")
-            span(style="display: block; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 13px; line-height: 21px; color: #727272;") #{mails.team}
+    table(border="0", cellpadding="0", cellspacing="0", height="100%", width="100%",
+          style="padding: 28px 14px 7px 14px; background-color: #eee;"): tr: td(align="center", valign="top")
+      
+      //  HEADER
+      table(border="0", cellpadding="0", cellspacing="0", width="100%",
+            style="margin-bottom: 14px"): tr: td(align="center", valign="top")
+        a(href=root.url, target="_blank")
+          img(src="../includes/images/nucubuc-newsletter.png", height="55px",
+              style="display: block; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 15px; line-height: 28px; color: #727272;",
+              alt=root.author+" Newsletter", title=root.author+", "+root.description)
+      
+      //  CONTENT
+      table(border="0", cellpadding="0", cellspacing="0", width="100%",
+            style="margin-bottom: 7px; padding: 35px 56px 21px 56px; background-color: #fff;")
+        tr: td(align="center", valign="top")
+          block content
+      
+      //  FOOTER
+      table(border="0", cellpadding="0", cellspacing="0", width="100%"): tr: td(align="center", valign="top")
+        span(style="display: block; font-family: Intro, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 500; font-size: 13px; line-height: 21px; color: #727272;") #{mails.team}
