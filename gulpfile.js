@@ -218,6 +218,13 @@ gulp.task('img', function() {
 });
 
 
+//  HTACCESS
+gulp.task('htaccess', function() {
+  return gulp.src('.htaccess')
+    .pipe(gulp.dest(dest));
+});
+
+
 //  WATCH
 gulp.task('watch', function() {
   //  gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug', 'mails', browserSync.reload]);
@@ -242,6 +249,6 @@ gulp.task('default', function() {
 
 //  RELEASE
 gulp.task('release', function() {
-  //  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'fonts', 'img']);
-  runSequence(['del', 'pug-en', 'mails-en', 'babel-en', 'stylus-en', 'webfonts-en', 'fonts-en', 'img-en']);
+  //  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'fonts', 'img', 'htaccess']);
+  runSequence(['del', 'pug-en', 'mails-en', 'babel-en', 'stylus-en', 'webfonts-en', 'fonts-en', 'img-en', 'htaccess']);
 });

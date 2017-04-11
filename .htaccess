@@ -1,0 +1,20 @@
+# RULES GENERATED FROM:
+# http://www.visiospark.com/mod-rewrite-rule-generator/
+
+Options -Indexes
+RewriteEngine on
+
+# REDIRECT '404'
+ErrorDocument 404 https://nucubuc.com/
+
+# REDIRECT 'INDEX.HTML'
+RewriteRule ^index\.html$ /? [L,R=302]
+
+# REDIRECT 'SUBSCRIBE'
+RewriteRule ^subscribe$ /? [L,R=302]
+
+# REWRITE 'WELCOME'
+RewriteRule ^welcome$ /?&%{QUERY_STRING}
+
+# REWRITE 'UNSUBSCRIBE'
+RewriteRule ^unsubscribe$ /?&%{QUERY_STRING}
