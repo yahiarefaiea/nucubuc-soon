@@ -80,7 +80,6 @@ $(document).ready(function() {
               $('.wrapper').removeClass('delay')
             }, 4500)
           }
-          
         }
         
       }, 1500)
