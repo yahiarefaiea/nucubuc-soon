@@ -105,10 +105,10 @@ $(document).ready(function() {
             setTimeout(function() {
               $('.soon').addClass('main')
               setTimeout(function() { $('.wrapper').removeClass('delay') }, 3000)
-            }, 100)  //  Waiting before SHOW 'main'
-          }, 1400)    //  Waiting the 'iterationClear()' function
-        }, 6000)      //  Waiting before HIDE 'confirmation'
-      }, 3000)        //  Waiting before SHOW 'confirmation'
+            }, 100)
+          }, 1400)
+        }, 6000)
+      }, 3000)
       
       e.preventDefault()
     })

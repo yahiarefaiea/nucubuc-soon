@@ -38,13 +38,50 @@ $(document).ready(function() {
       setTimeout(function() {
         
         //  SOON.PUG
-        if($('.wrapper').hasClass('soon'))
-          $('.soon').addClass('main')
-        
-        setTimeout(function() {
-          $('body').removeClass('page')
-          $('.wrapper').removeClass('delay')
-        }, 4500)
+        if($('.wrapper').hasClass('soon')) {
+          url = window.location.href
+          lastPart = url.substr(url.lastIndexOf('/') + 1)
+          
+          //  IF '/WELCOME'
+          if (lastPart == 'welcome') {
+            setTimeout(function() {
+              $('.soon').addClass('welcome')
+              setTimeout(function() {
+                $('body').removeClass('page')
+                $('.soon').removeClass('welcome')
+                  setTimeout(function() {
+                    $('.soon').addClass('main')
+                    setTimeout(function() { $('.wrapper').removeClass('delay') }, 3000)
+                  }, 100)
+              }, 6000)
+            }, 1500)
+          }
+          
+          //  IF '/UNSUBSCRIBE'
+          else if (lastPart == 'unsubscribe') {
+            setTimeout(function() {
+              $('.soon').addClass('unsubscribe')
+              setTimeout(function() {
+                $('body').removeClass('page')
+                $('.soon').removeClass('unsubscribe')
+                  setTimeout(function() {
+                    $('.soon').addClass('main')
+                    setTimeout(function() { $('.wrapper').removeClass('delay') }, 3000)
+                  }, 100)
+              }, 6000)
+            }, 1500)
+          }
+          
+          //  ELSE
+          else {
+            $('.soon').addClass('main')
+            setTimeout(function() {
+              $('body').removeClass('page')
+              $('.wrapper').removeClass('delay')
+            }, 4500)
+          }
+          
+        }
         
       }, 1500)
     }, 200)
