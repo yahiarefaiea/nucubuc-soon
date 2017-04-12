@@ -32,12 +32,13 @@ block content
           .h4.msgName #{newsletter.msgName}
         
         //  FORM CASE
-        .formCase: form(novalidate, autocomplete="off")
+        .formCase: form#subscribeForm(novalidate, autocomplete="off", method="get",
+          action="http://nucubuc.us15.list-manage.com/subscribe/post-json?u=ec72027b8647cda0452c7c28a&amp;id=afb3a18b9b")
           .GMIcon mail_outline
           .inputs
             .placeholder #{newsletter.placeholder}
-            input#form_email(type="email", name="form_email", placeholder=newsletter.email, dir="ltr", disabled)
-            input#form_name(type="text", name="form_name", placeholder=newsletter.name, disabled)
+            input#form_email(type="email", name="EMAIL", placeholder=newsletter.email, dir="ltr", disabled)
+            input#form_name(type="text", name="FNAME", placeholder=newsletter.name, disabled)
           .clicks: .click
             input#next(type="button", value="", title=newsletter.next, disabled)
             input#send(type="submit", value="", title=newsletter.send, disabled)

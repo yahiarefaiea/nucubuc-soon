@@ -44,6 +44,52 @@ function typing() {
   }, 25000)
 }
 
+//   SUBMIT FORM FUNCTION
+function submitForm($form) {
+  $.ajax({
+    type: 'GET',
+    url: $form.attr('action'),
+    data: $form.serialize(),
+    cache: false,
+    dataType: 'jsonp',
+    jsonp: 'c',
+    contentType: 'application/json; charset=utf-8',
+    error: function(error) {},
+    success: function(data) {
+      
+      if (data.result != 'success') {
+        if (data.msg && data.msg.indexOf('already subscribed') >= 0) {
+          $('.messageCase .confirmation div').html('you\'re already subscribed..')
+          $('.textCase .confirmation').html('why don\'t you try something else?')
+        } else {
+          $('.messageCase .confirmation div').html('whoops, something went wrong..')
+          $('.textCase .confirmation').html('please try again later')
+        }
+      } else {
+        $('.messageCase .confirmation div').html('you\'re almost there..')
+        $('.textCase .confirmation').html('check your email to confirm the subscription')
+      }
+      
+      setTimeout(function() {
+        $('.soon').removeClass('typing filled enterName').addClass('confirmation')
+        $('.inputs > input, .click > input').val('').attr({'disabled': true, 'required': false})
+        
+        setTimeout(function() {
+          iterationClear()
+          setTimeout(function() {
+            $('.soon').removeClass('confirmation')
+            setTimeout(function() {
+              $('.soon').addClass('main')
+              setTimeout(function() { $('.wrapper').removeClass('delay') }, 3000)
+            }, 100)
+          }, 1400)
+        }, 6000)
+      }, 3000)
+      
+    }
+  })
+}
+
 
 //  DOCUMENT READY
 $(document).ready(function() {
@@ -85,32 +131,18 @@ $(document).ready(function() {
     })
     
     //  SEND
-    $('#send').on('click', function(e) {
+    $('#send').on('click', function() {
       clearTimeout(typingTimeout)
       iterationCount()
       $('.wrapper').addClass('delay')
       $('.soon').removeClass('main')
       $('.inputs > input').attr({'disabled': false, 'required': true})
       
-      //  Inside The Ajax Callback
-      setTimeout(function() {
-        
-        $('.soon').removeClass('typing filled enterName').addClass('confirmation')
-        $('.inputs > input, .click > input').val('').attr({'disabled': true, 'required': false})
-        
-        setTimeout(function() {
-          iterationClear()
-          setTimeout(function() {
-            $('.soon').removeClass('confirmation')
-            setTimeout(function() {
-              $('.soon').addClass('main')
-              setTimeout(function() { $('.wrapper').removeClass('delay') }, 3000)
-            }, 100)
-          }, 1400)
-        }, 6000)
-      }, 3000)
-      
-      e.preventDefault()
+      //  SUBMIT DATA
+      $('#subscribeForm').submit(function(e) {
+        e.preventDefault()
+        submitForm($('#subscribeForm'))
+      })
     })
     
   }
