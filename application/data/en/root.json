@@ -1,15 +1,15 @@
 {
   "lang": "en",
   "dir": "ltr",
-  "title": "Nucubuc :: Interaction Web Design Consultancy",
+  "title": "Nucubuc :: Interaction Design Consultancy",
   "author": "Nucubuc",
-  "description": "An Interaction Web Design Consultancy",
+  "description": "An Interaction Web And Mobile Design Consultancy",
   "whoWeAre": "an interaction web design consultancy",
   
   "email": "email",
   "emailHello": "hello@nucubuc.com",
   "emailClient": "client@nucubuc.com",
-  "emailHelp": "help@nucubuc.com",
+  "emailNewsletter": "newsletter@nucubuc.com",
   
   "url": "https://nucubuc.com/",
   "urlSubscribe": "https://nucubuc.com/subscribe/",

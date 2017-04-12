@@ -45,6 +45,7 @@ function typing() {
 }
 
 //   SUBMIT FORM FUNCTION
+//   https://github.com/rydama/mailchimp-ajax-signup/blob/master/ajax-subscribe.html
 function submitForm($form) {
   $.ajax({
     type: 'GET',
