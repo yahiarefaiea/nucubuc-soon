@@ -12,6 +12,8 @@ html(lang=root.lang, dir=root.dir)
     block meta
       meta(name="description", content=root.description)
       meta(name="author", content=root.author)
+      meta(property="og:url", content=root.url)
+      meta(property="og:image", content=root.url+"includes/images/opengraph.png")
     
     //  INCLUDES
     link(rel="icon", type="image/png", href="includes/images/favicon.png")
