@@ -17,7 +17,6 @@ html(lang=root.lang, dir=root.dir)
     
     //  INCLUDES
     link(rel="icon", type="image/png", href="includes/images/favicon.png")
-    link(rel="stylesheet", href="includes/stylesheets/webfonts.lite.css")
     link(rel="stylesheet", href="includes/stylesheets/nuc.lite.css")
     script(src="includes/javascripts/nuc.lite.js")
   
@@ -27,5 +26,7 @@ html(lang=root.lang, dir=root.dir)
     //  CONTENT
     block content
   
-  img(src="includes/images/nucubuc-logo.png", title=root.author+", "+root.description, style="display: none")
-  img(src="includes/images/nucubuc-symbol.png", title=root.author+", "+root.description, style="display: none")
+  img(src="includes/images/nucubuc-logo.png", style="display: none",
+      title=root.author+", "+root.description, alt=root.author+", "+root.description)
+  img(src="includes/images/nucubuc-symbol.png", style="display: none",
+      title=root.author+", "+root.description, alt=root.author+", "+root.description)
